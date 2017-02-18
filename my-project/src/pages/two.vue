@@ -1,8 +1,8 @@
 <template>
-<div class="two">
+<div class="two div-beauty">
  <p>it is two</p>
- 	<a href="#/one">one</a>
- 	<a href="#/">content</a>
+ 	<a href="#/one" class="m-btn">one</a>
+ 	<a href="#/" class="m-btn">content</a>
 </div> 
 </template>
 
@@ -23,6 +23,7 @@ export default {
 </script>
 
 <style>
+@import url("../assets/css/common.less");
 .two{
 	background: #8f81d2;
 	width: 100%;

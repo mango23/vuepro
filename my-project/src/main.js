@@ -5,9 +5,14 @@ import App from 'pages/App'
 import router from 'router'
 
 /* eslint-disable no-new */
+//new Vue({
+//el: '#app',
+//router,
+//template: '<App/>',
+//components: { App }
+//})
 new Vue({
-  el: '#app',
-  router,
-  template: '<App/>',
-  components: { App }
+      el: '#app',
+      render: h => h(App),
+    router:router
 })

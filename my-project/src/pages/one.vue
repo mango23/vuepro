@@ -1,8 +1,8 @@
 <template>
 <div class="one">
 	<p>it is one</p>
- 	<a href="#/two">two</a>
- 	<a href="#/">content</a>
+ 	<a href="#/two" class="m-btn">two</a>
+ 	<a href="#/" class="m-btn">content</a>
 </div> 
 </template>
 
@@ -22,18 +22,20 @@ export default {
 }
 </script>
 
-<style>
-p{
-	font-size: 16px;
-}
+<style lang="less" rel="stylesheet/less" scoped>
+ @import url("../assets/css/common.less");
 .one{
 	background: #CCDDDD;
-	width: 100%;
+	width: 99%;
 	display: inline-block;
 	position: absolute;
 	top: 0;
-	left: 0;
+	left: 1%;
 	height: 512px;
 	text-align: center;
+	p{
+		font-size: 16px;
+		color: #8F81D2;
+	}
 }
 </style>

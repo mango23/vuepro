@@ -1,5 +1,5 @@
 <template>
- <div class="content">
+ <div class="content div-beauty">
  	<router-view>
  	
  	</router-view>
@@ -14,6 +14,7 @@ export default {
 </script>
 
 <style>
+@import url("../assets/css/common.less");
 .content{
 	width: 90%;
 	display: inline-block;

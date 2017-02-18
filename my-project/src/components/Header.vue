@@ -1,5 +1,5 @@
 <template>
- <div class="header">it is header</div>
+ <div class="header div-beauty">it is header</div>
 </template>
 
 <script>
@@ -9,6 +9,7 @@ export default {
 </script>
 
 <style>
+@import url("../assets/css/common.less");
 .header{
 	width: 100%;
 	height: 88px;

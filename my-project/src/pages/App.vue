@@ -15,6 +15,7 @@ import myHeader from 'components/Header'
 import myFooter from 'components/Footer'
 import sider from 'components/Sider'
 import myContent from 'components/Content'
+import mockdata from 'mock/mockdata'
 export default {
   name: 'app',
   components: {
@@ -26,7 +27,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less" rel="stylesheet/less" scoped>
+@import url("../assets/css/common.less");
 header,footer{
 	width: 100%;
 	height: 60px;
@@ -41,5 +43,7 @@ header,footer{
   color: #2c3e50;
   position: relative;
   /*margin-top: 60px;*/
+ 
 }
+
 </style>
