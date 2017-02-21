@@ -23,7 +23,7 @@ Mock.mock('mock/getone', {
 })
 
 Mock.mock('mock/gettwo', {
-	'two|1-10': [{
+	'two|9': [{
 		'date': '@date',
 		'cost': '@integer(100,1000)',
 		'image': '@image(100x100)',

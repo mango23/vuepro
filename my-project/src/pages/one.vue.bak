@@ -1,10 +1,10 @@
 <style lang="less" rel="stylesheet/less" scoped>
 	@import url("../assets/css/common.less");
-	.cont-box {
+	.cont-box{
 		font-size: 0;
 		width: 100%;
 		text-align: left;
-		.cont-item {
+		.cont-item{
 		display: inline-block;
 		border: 1px solid #ccc;
 		margin: 5px;
@@ -24,17 +24,26 @@
 	}
 	
 </style>
-<template> 
-	<div >
-		
-		<router-link to="one/onec">toonec</router-link>
-		
-		<router-view></router-view>
+<template>
+	<div>
+		<!--<div class="cont-box">
+		<div class="cont-item" v-for="(testdata, index) in testdatas">
+			<div class="item-img"><img :src="testdata.image"/></div>
+			<p>{{testdata.name}}</p>
+			<p>{{testdata.date}}</p>
+		</div>
+		<p my-message="hello!"></p>
+		</div>-->
+		<get-data></get-data>
+		<child :msg-name = "name"></child>
+		<my-article :text-p = "textp"></my-article>
+		<!-- <a v-link="{ path: '/one'}">News 03</a>-->
 	</div>
 
 </template>
 
 <script>
+	import getData from 'components/getData'
 	import myArticle from 'components/MyArticle'	
 	import router from 'router'
 	import $ from 'jquery'
@@ -52,23 +61,21 @@
 			 propA: Number
 		},
 		components: {
+			getData,
 			myArticle,
-		},
-		created () {
-			console.log('created')
+			'child': {
+                // 声明 props
+                props: ['msgName'],
+                template: '<div>A child component!     {{msgName}} </div>'
+            }
 		},
 		mounted () {
-			console.log('mounted')
-			console.log(this.$route.params)
+			console.log('one')
 		},
-		ready () {
-	        console.log(this.$route.params)
-    	},
 		methods: {
 			greet: function(event) {
 				console.log('hello')
-				router.push({ name: 'index', params: { userId: 123 }})
-				router.push('/two')
+				router.push('/one')
 			}
 		}
 	}

@@ -1,7 +1,9 @@
 <template>
  <div class="content div-beauty">
- 	<router-view>
- 	</router-view>
+ 	<keep-alive>
+	 	<router-view>
+	 	</router-view>
+ 	</keep-alive>
  </div>
 </template>
 
@@ -22,12 +24,13 @@ export default {
 	width: 90%;
 	display: inline-block;
 	position: absolute;
-	top: 88px;
+	top: 60px;
 	left: 10%;
 	height: 512px;
 	background: #fff;
 	text-align: center;
 	border: 1px solid #ccc;
 	border-radius: 5px;
+	padding: 20px;
 }
 </style>

@@ -1,38 +1,37 @@
 <style lang="less" rel="stylesheet/less" scoped>
 	@import url("../assets/css/common.less");
-	.cont-box{
+	.cont-box {
 		font-size: 0;
 		width: 100%;
 		text-align: left;
-		.cont-item{
-		display: inline-block;
-		border: 1px solid #ccc;
-		margin: 5px;
-		padding: 5px;
-		border-radius: 5px;
-		background: #CCDDDD;
-		p{
-			font-size: 12px;
-			text-align: center;
+		.cont-item {
+			display: inline-block;
+			border: 1px solid #ccc;
+			margin: 5px;
+			padding: 5px;
+			border-radius: 5px;
+			background: #CCDDDD;
+			p {
+				font-size: 12px;
+				text-align: center;
+			}
+		}
+		.item-img {
+			width: 100px;
+			height: 100px;
+			margin: 5px;
 		}
 	}
-	.item-img{
-		width: 100px;
-		height: 100px;
-		margin: 5px;
-	}
-	}
-	
 </style>
 <template>
 	<div>
 		<div class="cont-box">
-		<div class="cont-item" v-for="(testdata, index) in testdatas">
-			<div class="item-img"><img :src="testdata.image"/></div>
-			<p>{{testdata.name}}</p>
-			<p>{{testdata.date}}</p>
-		</div>
-		<p my-message="hello!"></p>
+			<div class="cont-item" v-for="(testdata, index) in testdatas">
+				<div class="item-img"><img :src="testdata.image" /></div>
+				<p>{{testdata.name}}</p>
+				<p>{{testdata.date}}</p>
+			</div>
+			<p my-message="hello!"></p>
 		</div>
 		<!-- <a v-link="{ path: '/one'}">News 03</a>-->
 	</div>
@@ -43,6 +42,7 @@
 	import myContent from 'components/Content'
 	import router from 'router'
 	import $ from 'jquery'
+	import axios from 'axios'
 	export default {
 		name: 'one',
 		data() {
@@ -53,23 +53,24 @@
 			}
 		},
 		props: {
-			 propA: Number,
-    		 propB: [String, Number],
-//  		 ['myMessage']
+			propA: Number,
+			propB: [String, Number],
+			//  		 ['myMessage']
 		},
 		components: {
 			myContent
 		},
-		mounted () {
+		created() {
 			this.getData()
+			this.getAxiosData()
 		},
 		methods: {
-			greet: function(event) {
+			greet(event) {
 				console.log('hello')
 				router.push('/one')
 			},
-			getData: function() {
-			    let self = this
+			getData() {
+				let self = this
 				$.ajax({
 					url: 'mock/gettwo',
 					type: 'get',
@@ -78,8 +79,16 @@
 						self.testdatas = data.two
 					}
 				})
+			},
+			getAxiosData() {
+				axios.get('mock/getmockdata')
+					.then(function(res) {
+						console.log(res);
+					})
+					.catch(function(err) {
+						console.log(err);
+					})
 			}
 		}
 	}
 </script>
-

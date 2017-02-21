@@ -1,74 +1,46 @@
-<style lang="less" rel="stylesheet/less" scoped>
-	@import url("../assets/css/common.less");
-	.cont-box{
-		font-size: 0;
-		width: 100%;
-		text-align: left;
-		.cont-item{
-		display: inline-block;
-		border: 1px solid #ccc;
-		margin: 5px;
-		padding: 5px;
-		border-radius: 5px;
-		background: #CCDDDD;
-		p{
-			font-size: 12px;
-			text-align: center;
-		}
-	}
-	.item-img{
-		width: 100px;
-		height: 100px;
-		margin: 5px;
-	}
-	}
-	
-</style>
 <template>
-	<div>
-		<!--<div class="cont-box">
-		<div class="cont-item" v-for="(testdata, index) in testdatas">
-			<div class="item-img"><img :src="testdata.image"/></div>
-			<p>{{testdata.name}}</p>
-			<p>{{testdata.date}}</p>
-		</div>
-		<p my-message="hello!"></p>
-		</div>-->
-		<get-data></get-data>
-		<!-- <a v-link="{ path: '/one'}">News 03</a>-->
-	</div>
+    <el-table
+      :data="tableData"
+      style="width: 100%">
+      <el-table-column
+        prop="date"
+        label="日期"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="name"
+        label="姓名"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="address"
+        label="地址">
+      </el-table-column>
+    </el-table>
+  </template>
 
-</template>
-
-<script>
-	import getData from 'components/getData'
-	import router from 'router'
-	import $ from 'jquery'
-	export default {
-		name: 'two',
-		data() {
-			return {
-				msg: 'Welcome to Your Vue.js App',
-				msg1: 'hello',
-			}
-		},
-		props: {
-			 propA: Number,
-    		 propB: [String, Number],
-//  		 ['myMessage']
-		},
-		components: {
-			getData
-		},
-		mounted () {
-			console.log('one')
-		},
-		methods: {
-			greet: function(event) {
-				console.log('hello')
-				router.push('/one')
-			}
-		}
-	}
-</script>
-
+  <script>
+    export default {
+      data() {
+        return {
+          tableData: [{
+            date: '2016-05-02',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1518 弄'
+          }, {
+            date: '2016-05-04',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1517 弄'
+          }, {
+            date: '2016-05-01',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1519 弄'
+          }, {
+            date: '2016-05-03',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1516 弄'
+          }]
+        }
+      }
+    }
+  </script>

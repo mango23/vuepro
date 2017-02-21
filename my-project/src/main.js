@@ -3,14 +3,9 @@
 import Vue from 'vue'
 import App from 'pages/App'
 import router from 'router'
+import ElementUI from 'element-ui'
+Vue.use(ElementUI)
 
-/* eslint-disable no-new */
-//new Vue({
-//el: '#app',
-//router,
-//template: '<App/>',
-//components: { App }
-//})
 new Vue({
       el: '#app',
       render: h => h(App),
