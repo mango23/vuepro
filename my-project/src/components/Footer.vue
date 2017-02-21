@@ -1,5 +1,5 @@
 <template>
- <div class="footer div-beauty">it is footer</div>
+ <div class="footer div-beauty"></div>
 </template>
 
 <script>
@@ -8,15 +8,16 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less" rel="stylesheet/less" scoped>
 @import url("../assets/css/common.less");
 .footer{
 	width: 100%;
 	height: 88px;
 	line-height: 88px;
-	background: #42B983;
+	background: @bgcolor;
 	text-align: center;
 	position: absolute;
 	bottom: -100px;
 }
 </style>
+1

@@ -1,41 +1,74 @@
+<style lang="less" rel="stylesheet/less" scoped>
+	@import url("../assets/css/common.less");
+	.cont-box{
+		font-size: 0;
+		width: 100%;
+		text-align: left;
+		.cont-item{
+		display: inline-block;
+		border: 1px solid #ccc;
+		margin: 5px;
+		padding: 5px;
+		border-radius: 5px;
+		background: #CCDDDD;
+		p{
+			font-size: 12px;
+			text-align: center;
+		}
+	}
+	.item-img{
+		width: 100px;
+		height: 100px;
+		margin: 5px;
+	}
+	}
+	
+</style>
 <template>
-<div class="one">
-	<p>it is one</p>
- 	<a href="#/two" class="m-btn">two</a>
- 	<a href="#/" class="m-btn">content</a>
-</div> 
+	<div>
+		<!--<div class="cont-box">
+		<div class="cont-item" v-for="(testdata, index) in testdatas">
+			<div class="item-img"><img :src="testdata.image"/></div>
+			<p>{{testdata.name}}</p>
+			<p>{{testdata.date}}</p>
+		</div>
+		<p my-message="hello!"></p>
+		</div>-->
+		<get-data my-message="hello!"></get-data>
+		<!-- <a v-link="{ path: '/one'}">News 03</a>-->
+	</div>
+
 </template>
 
 <script>
-import myContent from 'components/Content'
-export default {
-  name: 'index',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App 蚂蚁',
-      msg1: 'hello'
-    }
-  },
-  components: {
-    myContent
-  }
-}
+	import getData from 'components/getData'
+	import router from 'router'
+	import $ from 'jquery'
+	export default {
+		name: 'one',
+		data() {
+			return {
+				msg: 'Welcome to Your Vue.js App',
+				msg1: 'hello',
+			}
+		},
+		props: {
+			 propA: Number,
+    		 propB: [String, Number],
+//  		 ['myMessage']
+		},
+		components: {
+			getData
+		},
+		mounted () {
+			console.log('one')
+		},
+		methods: {
+			greet: function(event) {
+				console.log('hello')
+				router.push('/one')
+			}
+		}
+	}
 </script>
 
-<style lang="less" rel="stylesheet/less" scoped>
- @import url("../assets/css/common.less");
-.one{
-	background: #CCDDDD;
-	width: 99%;
-	display: inline-block;
-	position: absolute;
-	top: 0;
-	left: 1%;
-	height: 512px;
-	text-align: center;
-	p{
-		font-size: 16px;
-		color: #8F81D2;
-	}
-}
-</style>

@@ -1,5 +1,9 @@
 <template>
- <div class="sider div-beauty">it is sider</div>
+ <div class="sider div-beauty">
+ 	<router-link to="one" class="m-btn">one</router-link>
+ 	<router-link to="two" class="m-btn">two</router-link>
+ 	<router-link to="/" class="m-btn">content</router-link>
+ </div>
 </template>
 
 <script>
@@ -8,16 +12,15 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less" rel="stylesheet/less" scoped>
 @import url("../assets/css/common.less");
 .sider{
-	width: 10%;
+	width: 9%;
 	height:-moz-calc(100% - 90px); 
 	height:-webkit-calc(100% - 90px); 
 	height: calc(100% - 90px);
 	height: 512px;
-	background: #22b5ce;
+	background: #cde9ff;
 	text-align: center;
-	color: #fff;
 }
 </style>

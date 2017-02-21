@@ -1,5 +1,5 @@
 <template>
- <div class="header div-beauty">it is header</div>
+ <div class="header div-beauty"></div>
 </template>
 
 <script>
@@ -8,13 +8,13 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less" rel="stylesheet/less" scoped>
 @import url("../assets/css/common.less");
 .header{
 	width: 100%;
 	height: 88px;
 	line-height: 88px;
-	background: #42B983;
+	background: @bgcolor;
 	text-align: center;
 }
 </style>

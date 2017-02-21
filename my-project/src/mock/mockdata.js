@@ -26,6 +26,7 @@ Mock.mock('mock/gettwo', {
 	'two|1-10': [{
 		'date': '@date',
 		'cost': '@integer(100,1000)',
-		'image': '@image(100x100)'
+		'image': '@image(100x100)',
+		'name': '@name'
 	}]
 })

@@ -26,30 +26,30 @@
 </style>
 <template>
 	<div>
-		<!--<div class="cont-box">
+		<div class="cont-box">
 		<div class="cont-item" v-for="(testdata, index) in testdatas">
 			<div class="item-img"><img :src="testdata.image"/></div>
 			<p>{{testdata.name}}</p>
 			<p>{{testdata.date}}</p>
 		</div>
 		<p my-message="hello!"></p>
-		</div>-->
-		<get-data></get-data>
+		</div>
 		<!-- <a v-link="{ path: '/one'}">News 03</a>-->
 	</div>
 
 </template>
 
 <script>
-	import getData from 'components/getData'
+	import myContent from 'components/Content'
 	import router from 'router'
 	import $ from 'jquery'
 	export default {
-		name: 'two',
+		name: 'one',
 		data() {
 			return {
 				msg: 'Welcome to Your Vue.js App',
 				msg1: 'hello',
+				testdatas: {}
 			}
 		},
 		props: {
@@ -58,15 +58,26 @@
 //  		 ['myMessage']
 		},
 		components: {
-			getData
+			myContent
 		},
 		mounted () {
-			console.log('one')
+			this.getData()
 		},
 		methods: {
 			greet: function(event) {
 				console.log('hello')
 				router.push('/one')
+			},
+			getData: function() {
+			    let self = this
+				$.ajax({
+					url: 'mock/gettwo',
+					type: 'get',
+					dataType: 'json',
+					success: function(data) {
+						self.testdatas = data.two
+					}
+				})
 			}
 		}
 	}

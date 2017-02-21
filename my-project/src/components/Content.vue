@@ -1,19 +1,22 @@
 <template>
  <div class="content div-beauty">
  	<router-view>
- 	
  	</router-view>
- 	
  </div>
 </template>
 
 <script>
 export default {
-  name: 'content'
+  name: 'content',
+  data () {
+  	return{
+  		mymessage:'123'
+  	}	
+  }
 }
 </script>
 
-<style>
+<style lang="less" rel="stylesheet/less" scoped>
 @import url("../assets/css/common.less");
 .content{
 	width: 90%;
@@ -24,5 +27,7 @@ export default {
 	height: 512px;
 	background: #fff;
 	text-align: center;
+	border: 1px solid #ccc;
+	border-radius: 5px;
 }
 </style>
