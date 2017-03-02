@@ -34,6 +34,7 @@
 		</div>
 		<p my-message="hello!"></p>
 		</div>-->
+		<!--<button @click="greet"></button>-->
 		<get-data></get-data>
 		<!-- <a v-link="{ path: '/one'}">News 03</a>-->
 	</div>
@@ -67,6 +68,8 @@
 			greet: function(event) {
 				console.log('hello')
 				router.push('/one')
+				var arr = [1,2,3,4]
+				console.log(...arr)
 			}
 		}
 	}

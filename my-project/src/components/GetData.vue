@@ -60,9 +60,16 @@
 		components: {
 			myContent
 		},
+		//		mounted() {
+		//			
+		//		},
 		created() {
 			this.getData()
-			this.getAxiosData()
+			//			this.getAxiosData()
+		},
+		watch: {
+			// 如果路由有变化，会再次执行该方法
+			'$route': 'getData'
 		},
 		methods: {
 			greet(event) {
@@ -79,16 +86,17 @@
 						self.testdatas = data.two
 					}
 				})
-			},
-			getAxiosData() {
-				axios.get('mock/getmockdata')
-					.then(function(res) {
-						console.log(res);
-					})
-					.catch(function(err) {
-						console.log(err);
-					})
 			}
 		}
 	}
+	//	,
+	//			getAxiosData() {
+	//				axios.get('mock/getmockdata')
+	//					.then(function(res) {
+	//						console.log(res);
+	//					})
+	//					.catch(function(err) {
+	//						console.log(err);
+	//					})
+	//			}
 </script>

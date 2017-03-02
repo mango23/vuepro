@@ -1,4 +1,7 @@
-@bgcolor:#324157;
+@bgcolor: #324157;
+body{
+    min-width: 960px;
+}
 p {
     font-size: 16px;
 }
@@ -11,7 +14,8 @@ input {
     border: 1px solid #ccc;
     box-shadow: 2px 2px 2px #ccc;
 }
-.m-btn,button {
+.m-btn,
+button {
     width: 120px;
     height: 39px;
     margin: 0 auto;
@@ -20,26 +24,37 @@ input {
     text-align: center;
     font-size: 14px;
     color: #fff;
-    border: 2px solid transparent;
+    border: 3px solid transparent;
     border-radius: 5px;
-//  box-shadow: 2px 2px 2px #ccc;
+    //  box-shadow: 2px 2px 2px #ccc;
     margin: 5px 0;
     box-sizing: border-box;
-    &:first-child{
+    &:first-child {
         margin-top: 0;
     }
 }
-.m-btn{
+.m-btn {
     display: inline-block;
 }
-a{
+a {
     text-decoration: none;
 }
-.div-beauty{
+.div-beauty {
     margin: 5px;
     box-shadow: 2px 2px 2px #ccc;
     box-sizing: border-box;
 }
-.router-link-active{
-    border:2px solid #1597FF;
+a.router-link-active {
+    border-bottom: 3px solid #1597FF;
+}
+.el-menu-item {
+    a {
+        //      display: inline-block;
+    }
+}
+.is-active {
+    //  border-bottom:2px solid #1597FF;
+}
+.span-router {
+    cursor: pointer;
 }

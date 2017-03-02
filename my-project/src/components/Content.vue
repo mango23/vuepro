@@ -25,8 +25,8 @@ export default {
 	display: inline-block;
 	position: absolute;
 	top: 60px;
-	left: 10%;
-	height: 512px;
+	left: 145px;
+	height: 595px;
 	background: #fff;
 	text-align: center;
 	border: 1px solid #ccc;

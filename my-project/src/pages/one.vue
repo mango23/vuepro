@@ -21,13 +21,16 @@
 		height: 100px;
 		margin: 5px;
 	}
+	.span-router{
+		 cursor: pointer;
+	}
 	}
 	
 </style>
 <template> 
 	<div >
 		
-		<router-link to="one/onec">toonec</router-link>
+		<router-link to="/one/onec" tag="span" class="span-router">toonec</router-link>
 		
 		<router-view></router-view>
 	</div>
@@ -55,18 +58,18 @@
 			myArticle,
 		},
 		created () {
-			console.log('created')
+//			console.log('created')
 		},
 		mounted () {
-			console.log('mounted')
-			console.log(this.$route.params)
+//			console.log('mounted')
+//			console.log(this.$route.params)
 		},
 		ready () {
-	        console.log(this.$route.params)
+//	        console.log(this.$route.params)
     	},
 		methods: {
 			greet: function(event) {
-				console.log('hello')
+//				console.log('hello')
 				router.push({ name: 'index', params: { userId: 123 }})
 				router.push('/two')
 			}

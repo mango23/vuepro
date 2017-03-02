@@ -5,6 +5,7 @@
  	<router-link to="/index" class="m-btn">content</router-link>
  	<router-link to="/elementui" class="m-btn">elementui</router-link>
  	<router-link to="/form" class="m-btn">form</router-link>
+ 	<router-link to="/counter" class="m-btn">counter</router-link>
  </div>
 </template>
 
@@ -18,10 +19,11 @@ export default {
 @import url("../assets/css/common.less");
 .sider{
 	width: 9%;
+	min-width: 145px;
 	height:-moz-calc(100% - 90px); 
 	height:-webkit-calc(100% - 90px); 
 	height: calc(100% - 90px);
-	height: 512px;
+	height: 595px;
 	/*background: #324157;*/
 	text-align: center;
 }

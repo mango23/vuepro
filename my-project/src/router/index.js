@@ -5,6 +5,7 @@ import two from 'pages/two'
 import onec from 'pages/onec'
 import elementui from 'pages/elementui'
 import form from 'pages/form'
+import counter from 'pages/counter'
 Vue.use(Router)
 const one = resolve => require(['pages/one'], resolve) // 路由懒加载
 export default new Router({
@@ -47,6 +48,11 @@ export default new Router({
       path: '/two',
       name: 'two',
       component: two
+    },
+    {
+      path: '/counter',
+      name: 'counter',
+      component: counter
     }
   ]
 })

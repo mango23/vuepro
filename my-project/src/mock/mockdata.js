@@ -15,7 +15,7 @@ export default Mock.mock('mock/getmockdata', {
 })
 
 Mock.mock('mock/getone', {
-	'one|1-10': [{
+	'one|6': [{
 		'date': '@date',
 		'cost': '@integer(100,1000)',
 		'image': '@image(100x100)'
@@ -23,7 +23,7 @@ Mock.mock('mock/getone', {
 })
 
 Mock.mock('mock/gettwo', {
-	'two|9': [{
+	'two|5-9': [{
 		'date': '@date',
 		'cost': '@integer(100,1000)',
 		'image': '@image(100x100)',
