@@ -10,13 +10,12 @@
 	<div class="onec">
 		<p>one-child</p>
 		count is {{ $store.state.count }}
-		<button @click="increments">+5</button>
-		<button @click="decrements">-2</button>
+		<button @click="increment">+5</button>
+		<button @click="decrement">-2</button>
 		<button @click="incrementAsync">-2</button>
 		<button @click="onecF">onecF</button>
-		<button @click="onebF">onebF</button>
 		<!--<button @click="getNames()">-2</button>-->
-		it is counts {{ $store.state.a.counts }}
+		{{ count }}
 	</div>
 
 </template>
@@ -39,30 +38,19 @@
 			count() {
 				//				return console.log(this.$store.getters.done)
 				return console.log(this.$store.state.count)
-			},
-			counts() {
-				//				return console.log(this.$store.getters.done)
-				return console.log(this.$store.state.a.counts)
 			}
 		},
-		methods: { //要先安装babel插件 babel-plugin-transform-object-rest-spread，不然不能使用对象扩展符报编译错误       ，安装完后在 .babelrc中添加 
+		methods: { //要先安装babel插件 babel-plugin-transform-object-rest-spread，不然不能使用对象扩展符报编译错误，安装完后在 .babelrc中添加 
 			//"plugins": ["transform-object-rest-spread"]
-			...mapActions([ // dispatch到actions
-				'increments',
-				'decrements',
+			...mapActions([
+				'increment',
+				'decrement',
 				'incrementAsync'
 			]),
-			onecF() {
-				this.$store.commit('increment', 102) // commit到mutations
-			},
-			onebF() {
-//				this.$store.dispatch('incrementIfOddOnRootSum ') // dispatch到actions
-					//				this.$store.dispatch('incrementAsync') // dispatch到actions
-					//				this.$store.getters.getF
-					this.$store.commit('getName1',1023)
-					//				console.log(this.$store.state.a.count)
-				}
-				//			inincrea: this.$store.dispatch('incrementAsync')
+			onecF(){
+				this.$store.commit('increment',102)
 			}
+			//			inincrea: this.$store.dispatch('incrementAsync')
 		}
+	}
 </script>

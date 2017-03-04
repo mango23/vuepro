@@ -3,16 +3,23 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 const moduleA = {
-	state: { count: 0 },
+	state: { counts: 10 },
 	mutations: {
 		getName1(state, n) {
-			state.count += n
+			state.counts += n
+			console.log('it is'+state.counts)
 		}
 	},
 	actions: {
-		getName1: ({ commit }) => commit('getName1', 12)
+		getName1: ({ commit }) => commit('getName1', 12),
+
+		incrementIfOddOnRootSum({ state, commit, rootState }) {
+			if((state.count + rootState.counts) % 2 === 1) {
+				commit('increment')
+			}
+		}
 	},
-	getters: { done(state) { return state.count + 5; } }
+	getters: { done(state) { return state.counts + 5; } }
 }
 
 const moduleB = {
@@ -39,9 +46,9 @@ const mutations = {
 	}
 }
 const actions = {
-	increment: ({ commit }) => commit('increment', 12),
-	decrement: ({ commit }) => commit('decrement'),
-	incrementAsync ({ commit }) {
+	increments: ({ commit }) => commit('increment', 12),
+	decrements: ({ commit }) => commit('decrement'),
+	incrementAsync({ commit }) {
 		setTimeout(() => {
 			commit('decrement')
 		}, 1000)
@@ -50,15 +57,18 @@ const actions = {
 	//	decrement: (context) => context.commit('decrement')
 }
 const getters = {
+	getF(){
+		console.log('getF')
+	}
 }
 
 export default new Vuex.Store({
-		state,
-		mutations,
-		actions,
-		getters,
-		modules: {
-			a: moduleA,
-			b: moduleB
-		}
-	})
+	state,
+	mutations,
+	actions,
+	getters,
+	modules: {
+		a: moduleA,
+		b: moduleB
+	}
+})
